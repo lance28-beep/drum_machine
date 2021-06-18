@@ -1,39 +1,156 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #19172e;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: column;
+}
+.container::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(#f9d924, #ff2c24);
+  animation: animate 5s ease-in-out infinite;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.container::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 20%;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(#01d6ff, #0f24f9);
+  animation: animate 5s ease-in-out infinite;
+  animation-delay: -2.5s;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
+/* ///animate both container before after */
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(20px);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(-20px);
   }
-  100% {
-    transform: translateY(0px);
+}
+
+.drum___container {
+  position: relative;
+  width: 700px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-around;
+}
+#heading {
+  height: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  justify-content: space-between;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.display__control {
+  height: 90%;
+  width: 40%;
+  margin: auto;
+  color: white;
+  background: linear-gradient(#f9d924, #ff2c24);
+  border-radius: 12px;
+}
+.display__control > h1 {
+  text-align: center;
+  justify-self: center;
+  margin-top: 10%;
+}
+.label > p {
+  margin-top: 10px;
+}
+.label > a {
+  margin-top: 10px;
+  font-weight: 900;
+  color: #01d6ff;
+  text-decoration: none;
+}
+
+.button___sounds {
+  height: 98%;
+  width: 68%;
+  margin: auto;
+  background: linear-gradient(#f9d924, #ff2c24);
+  border-radius: 20px;
+  align-content: center;
+  gap: 4px;
+}
+
+.display__others {
+  height: 98%;
+  width: 28%;
+  margin: auto;
+  background: linear-gradient(#f9d924, #ff2c24);
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 650px) {
+  .drum___container {
+    flex-direction: column;
+    height: 90vh;
+    width: 80%;
   }
+
+  .control__toggle {
+    width: 98%;
+  }
+  .button___sounds {
+    width: 99%;
+    height: 60%;
+  }
+
+  .display__others {
+    width: 98%;
+    height: 100%;
+  }
+}
+
+.control__toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#display {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social__icons > span {
+  font-weight: 500;
+  margin-left: 10px;
 }

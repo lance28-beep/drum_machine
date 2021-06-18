@@ -1,0 +1,34 @@
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.button__Row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.drum-pad {
+  position: relative;
+  width: 33%;
+  height: 100px;
+  margin: auto;
+}
+.button__Row > button {
+  background: linear-gradient(#01d6ff, #0f24f9);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.button__Row > button:hover {
+  background: linear-gradient(#f9d924, #ff2c24);
+  transition: 5s;
+}
